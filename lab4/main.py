@@ -76,51 +76,41 @@ def save_button_clicked():
         show_popup(f"Error to {e}")
 
 
-# Создание основного окна
 root = tk.Tk()
 root.title("Scanner")
 
-# Текстовое поле и лейбл для IPs
 ips_label = tk.Label(root, text="Ips")
 ips_label.grid(row=0, column=0, sticky="w")
 ips_entry = tk.Entry(root)
 ips_entry.grid(row=0, column=1, pady=5)
 
-# Текстовое поле и лейбл для Ports
 ports_label = tk.Label(root, text="Ports")
 ports_label.grid(row=1, column=0, sticky="w")
 ports_entry = tk.Entry(root)
 ports_entry.grid(row=1, column=1, pady=5)
 
-# Кнопка "Scan"
 scan_button = tk.Button(root, text="Scan", command=scan_button_clicked)
 scan_button.grid(row=2, column=0, columnspan=2, pady=10)
 
-# Текстовое поле и лейбл для Filter by country
 filter_label = tk.Label(root, text="Filter by country")
 filter_label.grid(row=3, column=0, sticky="w")
 filter_entry = tk.Entry(root)
 filter_entry.grid(row=3, column=1, pady=5)
 
-# Кнопка "Enable/disable filter"
 filter_status = tk.StringVar()
 filter_status.set("Disabled")
 toggle_button = tk.Button(root, text="Enable/Disable Filter", command=toggle_filter)
 toggle_button.grid(row=3, column=2, columnspan=2, pady=10)
 
-# Текстовое поле и лейбл для Filter by country
 file_label = tk.Label(root, text="File to save")
 file_label.grid(row=4, column=0, sticky="w")
 file_entry = tk.Entry(root)
 file_entry.grid(row=4, column=1, pady=5)
 
-# Кнопка "Enable/disable filter"
 save_button = tk.Button(root, text="Save", command=save_button_clicked)
 save_button.grid(row=4, column=2, columnspan=2, pady=10)
 
-# Большое поле для вывода информации
 result_text = scrolledtext.ScrolledText(root, width=60, height=30)
 result_text.grid(row=5, column=0, columnspan=3, pady=10)
 
-# Запуск основного цикла
 root.mainloop()
